@@ -12,8 +12,27 @@
 
 # coding
 ```java
-
+class Solution {
+    public int mySqrt(int x) {
+       int left = 0;
+       int right = x;
+       int ans = -1;
+       while(left <= right){
+           int mid = left + (right - left) / 2;
+           // 防止溢出
+           if((long)mid * mid <= x){
+               ans = mid;
+               left = mid + 1;
+           }else{
+               right = mid - 1;
+           }
+       }
+       return ans;
+    }
+}
 ```
 
 # 总结
+1. 这题是比较经典的二分查询
+2. 因为我们的值是小数的时候我们需要截取整数，所以我们要不断的移动指针，直到两个指针相等才停止
 
