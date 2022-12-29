@@ -10,5 +10,11 @@
    4. [leetCode704.二分查找](./array-algorithm/binary-search/problem/leetcode704：二分查找.md)
 
 2. [排序](./array-algorithm/sort)
+   >例题
+   1. [leetCode215数组中的第k个最大的元素](./array-algorithm/sort/problem/leetcode215数组中的第k个最大的元素.md)
+   2. [leetCode75颜色分类](./array-algorithm/sort/problem/leetcode75颜色分类.md)
+   3. [leetCode88合并两个有序数组](./array-algorithm/sort/problem/leetcode88合并两个有序数组.md)
 3. [双指针](./array-algorithm/double-pointer)
+   >例题
+   1. [leetCode11盛最多水的容器](./array-algorithm/double-pointer/problem/leetCode11.%20盛最多水的容器.md)
 
