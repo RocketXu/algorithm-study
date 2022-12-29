@@ -6,3 +6,4 @@
 # 经典题目
 1. [leetCode11.盛最多水的容器](./problem/leetCode11.%20盛最多水的容器.md)
 2. [leetCode26.删除有序数组中的重复项](./problem/leetCode26.删除有序数组中的重复项.md)
+3. [leetCode27.移除元素](./problem/leetCode27.移除元素.md)

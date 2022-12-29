@@ -17,4 +17,6 @@
 3. [双指针](./array-algorithm/double-pointer)
    >例题
    1. [leetCode11盛最多水的容器](./array-algorithm/double-pointer/problem/leetCode11.%20盛最多水的容器.md)
+   2. [leetCode26.删除有序数组中的重复项](./array-algorithm/double-pointer/problem/leetCode26.删除有序数组中的重复项.md)
+   3. [leetCode27.移除元素](./array-algorithm/double-pointer/problem/leetCode27.移除元素.md)
 
