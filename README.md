@@ -2,6 +2,7 @@
 算法学习列表
 
 # 数组
+
 1. [二分查找](./array-algorithm/binary-search)
    >例题：
    1. [leetCode34.在排序数组中查找元素的第一个和最后一个位置](./array-algorithm/binary-search/problem/leetcode34.%20在排序数组中查找元素的第一个和最后一个位置.md)
@@ -21,4 +22,9 @@
    3. [leetCode27.移除元素](./array-algorithm/double-pointer/problem/leetCode27.移除元素.md)
    4. [leetCode42.接雨水](./array-algorithm/double-pointer/problem/leetCode42.接雨水.md)
 4. [区间问题](./array-algorithm/sort)
+5. [子数组](./array-algorithm/sub-array/)
+>例题
+
+# 数组题型方法总结
+
 
