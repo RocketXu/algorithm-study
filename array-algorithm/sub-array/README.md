@@ -39,5 +39,6 @@ class Solution {
 # 经典例题
 1. [leetCode209.长度最小的子数组](./problem/leetCode209.长度最小的子数组.md)
 2. [leetCode238.除自身以外数组的乘积](./problem/leetCode238.除自身以外数组的乘积.md)
-
+3. [leetCode325.和等于k的最长子数组长度](./problem/leetCode325.%20和等于%20k%20的最长子数组长度.md)
+4. [leetCode560.和为K的子数组](./problem/leetCode560.%20和为%20K%20的子数组.md)
 
