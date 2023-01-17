@@ -1,6 +1,8 @@
 # algorithm-study
 算法学习列表
 
+**主要目的：用来记录自己的刷题路径**
+
 # 数组
 
 1. [二分查找](./array-algorithm/binary-search)
