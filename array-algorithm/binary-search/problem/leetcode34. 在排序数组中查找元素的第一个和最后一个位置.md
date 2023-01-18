@@ -9,79 +9,81 @@
 # coding
 ```java
 class Solution {
+    /**
+    总体的题目思想是通过二分查找的方式
+    1.找到左边界，左边的目标值的位置
+    2.找到右边界，右边的目标值的位置
+     */
     public int[] searchRange(int[] nums, int target) {
-        if(nums.length == 0){
-            return new int[]{-1,-1};  
+
+
+        int leftIdx = findLeft(nums, target);
+        int rightIdx = findRight(nums, target);
+
+        return new int[]{leftIdx,rightIdx};  
+    }
+
+    public int findRight(int[] nums, int target){
+        int left = 0;
+        int right = nums.length - 1;    
+        while(left <= right){
+            int mid = left + (right - left) / 2;
+            if(target > nums[mid]){
+                left =mid + 1;
+
+            }else if(target < nums[mid]){
+                right = mid - 1;
+
+            }else{
+                // 为了清楚的表明我的代码逻辑，所以写出来。这里我们是不return，但是我的目的是需要跳出循环（目的是让右边的大于目标值）
+                // 动左边就完事了（这里的理解和下面的判断场景我们都可以换图干一些）
+                left =mid + 1;
+            }
         }
+        // 判断返回哪个值
+        if(right < nums.length && right >=0 && nums[right] == target){
+            return right;
+        }
+        if(left < nums.length && left >=0 && nums[left] == target){
+            return left;
+        }
+        return -1;
 
-        // 二分查找左边界
-        int left = findLeft(nums, target);
-        // 二分查找右边界
-        int right = findRight(nums, target);
-
-        return new int[]{left,right};  
     }
 
     /**
-        左边界，那么右边的值一定大于等于目标值；使用right指针
+    左边界的左边的值一定是小于目标值的
      */
     public int findLeft(int[] nums, int target){
         int left = 0;
-        int right = nums.length - 1;
-       
-
+        int right = nums.length - 1;    
         while(left <= right){
             int mid = left + (right - left) / 2;
-            if(nums[mid] >= target){
-                    right = mid - 1;
-                }else{
-                    left = mid + 1;
-            }
-        }
-        
-
-        // 先取right
-        // 以右边为主
-        if(right >= 0 &&  right<nums.length &&nums[right] == target){
-            return right;
-        }
-        if(left >= 0 && left<nums.length && nums[left] == target){
-            return left;
-        }
-        return -1;
-    }
-
-
-    /**
-        右边界靠左指针，左边得值<=目标值
-     */
-    public int findRight(int[] nums, int target){
-        int left = 0;
-        int right = nums.length - 1;
-        while(left <= right){
-            int mid = left + (right - left) / 2;
-            if(nums[mid] <= target){
-                left = mid + 1;
-               
+            if(target > nums[mid]){      
+                left =mid + 1;
+            }else if(target < nums[mid]){
+                right = mid - 1;
             }else{
-              right = mid - 1;  
+                // 为了清楚的表明我的代码逻辑，所以写出来。这里我们是不return，但是我的目的是需要跳出循环(同时的目的是让左边的小于目标值)
+                // 动右边就完事
+                right = mid - 1;
             }
         }
-        // 以左边为主
-        if(left >= 0 && left<nums.length && nums[left] == target){
-            return left;
-        }
-        if(right >= 0 &&  right<nums.length &&nums[right] == target){
+        // 判断返回哪个值
+        if(right < nums.length && right >=0 && nums[right] == target){
             return right;
+        }
+        if(left < nums.length && left >=0 && nums[left] == target){
+            return left;
         }
         return -1;
     }
-    
+      
 }
 ```
 
 # 总结
-1. 这题总的来说还是考的时二分法
+1. 这题总的来说还是考的是二分法
 2. 难点如下
    1. 传统的二分只能找到值，无法判断值是在边界，最简单的这里就用线性的方法去试探，但是就不能复合时间复杂度了
    2. 那我们就可以使用二分法来分别求取左边界和有边界
