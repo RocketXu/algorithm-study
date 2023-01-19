@@ -32,6 +32,7 @@
 4. [leetCode560.和为K的子数组](./array-algorithm/double-pointer/problem/leetCode560.%20和为%20K%20的子数组.md)
 
 ## 数组题型方法总结
+[](./array-algorithm/README.MD)
 
 
 # 链表
