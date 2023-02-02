@@ -48,7 +48,7 @@ class Solution {
         if (root.right == null && root.left != null) {
             return leftDepth + 1;
         }
-        // 如果直接假，就算上了为空的结果(误区：不要1和2直接判断这步，那造成的问题，就是null的高度还是返回了上一个节点)
+        // 如果直接假，就算上了为空的结果(误区：不要1和2直接判断这步，那造成的问题，就是null的高度还是返回了上一个节点)，都不为空时才取两颗树的最小值
         int depth = 1 + Math.min(leftDepth, rightDepth);
 
         return depth;
@@ -60,6 +60,7 @@ class Solution {
 
 # 总结
 1. 图中的解释很重要
+2. <font color="red">当左右节点都不为空时才取两颗树的最小值</font>
 ![](../img/2023-02-02-20-39-34.png)
 
 
