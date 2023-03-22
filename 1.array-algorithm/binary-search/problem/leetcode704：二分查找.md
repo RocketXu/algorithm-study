@@ -7,24 +7,29 @@
 # coding
 ```java
 class Solution {
-    /**
-        二分查找法：排好序的
-     */
+    /**二分查找 (左闭右闭更好理解)
+        左闭右闭：是指刚好取到集合的做下标和右下标
+        1. 左闭右闭，终止条件可以取到相等
+        2. 左边右边，在移动左右指针的时候要多一位少一位
+    */
     public int search(int[] nums, int target) {
-        // 使用左闭右闭的思路
         int left = 0;
         int right = nums.length - 1;
         while(left <= right){
-            // 防止值太大相加溢出优化
-            int mid = left + (right - left) / 2;
-            if(nums[mid] > target){
-                right = mid - 1;
-            }else if(nums[mid] < target){
+            // 防止left 和 right 太大时int溢出
+           int mid = left + (right - left) / 2;
+            if(nums[mid] < target){
+                // 说明在右边
                 left = mid + 1;
-            }else{
+            }
+            if(nums[mid] > target){
+                // 说明在左边
+                right = mid - 1;
+            }
+            if(nums[mid] == target){
                 return mid;
             }
-        } 
+        }
         return -1;
     }
 }
@@ -36,3 +41,9 @@ class Solution {
 - right = length - 1
 - 循环结束条件<=
 3. 对于这可以使用二分查找的题目我们一般使用的都是对有序的数组集合进行操作。
+
+>温故知新：
+二分查找 (左闭右闭更好理解)
+        左闭右闭：是指刚好取到集合的做下标和右下标
+        1. 左闭右闭，终止条件可以取到相等
+        2. 左边右边，在移动左右指针的时候要多一位少一位
