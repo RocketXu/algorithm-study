@@ -13,21 +13,26 @@
 # coding
 ```java
 class Solution {
+    /**
+        使用二分查找    
+     */
     public int mySqrt(int x) {
-       int left = 0;
-       int right = x;
-       int ans = -1;
-       while(left <= right){
-           int mid = left + (right - left) / 2;
-           // 防止溢出
-           if((long)mid * mid <= x){
-               ans = mid;
-               left = mid + 1;
-           }else{
-               right = mid - 1;
-           }
-       }
-       return ans;
+        int left = 0;
+        int right = x;
+        int ans = -1;
+        while(left <= right){
+            int mid = left + (right - left) / 2;
+            // 这里一定要long 相乘得溢出得风险极高
+            if((long)mid * mid <= x){
+                ans = mid;
+                left = mid + 1;
+                // 他不需要不停得移动，因为小于得时候不一定ok，要想着不停得缩小这个范围
+                // return ans;
+            }else{
+                right = mid - 1;
+            }
+        }
+        return ans;
     }
 }
 ```
