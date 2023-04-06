@@ -10,32 +10,38 @@
 # coding
 ```java
 class Solution {
-    // 使用三指针的方式
+    /**
+    使用三指针，实现一次遍历完成
+     */
     public void sortColors(int[] nums) {
+        // 头指针
         int i = 0;
+        // 遍历指针
         int j = 0;
+        // 尾指针
         int k = nums.length - 1;
+
         while(j <= k){
             if(nums[j] == 0){
-                swap(nums,i,j);
-                i++;
-                // 因为判断的就是j，所以j必定是要后移的9
-                j++;
+                swap(nums, i, j);
+                i ++;
+                j ++;
             }else if(nums[j] == 2){
-                swap(nums,k,j);
-                k--;
-                // 不知道k是多少所以不要j后移  
+                swap(nums, j, k);
+                k --;
             }else{
                 j ++;
             }
-        } 
+            
+        }
     }
 
-    public static void swap(int[] a, int i, int j) {
-		int t = a[i];
-		a[i] = a[j];
-		a[j] = t;
-	}
+    public void swap(int[] nums, int i, int j){
+        int temp;
+        temp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = temp;
+    }
 }
 ```
 
