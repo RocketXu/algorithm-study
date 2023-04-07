@@ -35,6 +35,39 @@ class Solution {
 }
 ```
 
+- 方法二：展开Math.max
+```java
+class Solution {
+    /**
+    使用头尾双指针
+    
+     */
+    public int maxArea(int[] height) {
+        int i = 0;
+        int j = height.length - 1;
+        int maxArea = Integer.MIN_VALUE;
+        while(i < j){
+            int boot = j - i;
+            // 取短板
+            int a = height[i];
+            int b = height[j];
+            int heightVal =  a < b ? a : b;
+            // 计算短板决定得面积
+            int area = boot * heightVal;
+            maxArea = area > maxArea ? area : maxArea;
+            // 移动决定作用得短板
+            if(a > b){
+                j --;
+            }else{
+                i ++;
+            }
+        }
+        return maxArea;
+
+    }
+}
+```
+
 # 总结
 1. 使用头尾双指针的思想
 2. 易错难点：
